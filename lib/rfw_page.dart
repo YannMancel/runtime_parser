@@ -49,13 +49,15 @@ class _RFWPageState extends State<RFWPage> {
       // Configuration data:
       ..update('greet', <String, Object>{'name': 'World (After on tap)'});
 
-    setState(() {
-      _widget = RemoteWidget(
-        runtime: runtime,
-        data: data,
-        widget: const FullyQualifiedWidgetName(kMainName, 'root'),
-      );
-    });
+    if (mounted) {
+      setState(() {
+        _widget = RemoteWidget(
+          runtime: runtime,
+          data: data,
+          widget: const FullyQualifiedWidgetName(kMainName, 'root'),
+        );
+      });
+    }
   }
 
   @override
@@ -63,7 +65,7 @@ class _RFWPageState extends State<RFWPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('RFW Package'),
+        title: const Text('rfw Package'),
       ),
       body: _widget,
       floatingActionButton: FloatingActionButton(

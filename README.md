@@ -13,8 +13,9 @@
 3. Select the project
 
 ## Dependencies
-* Remote parser
+* Remote parsers
     * [rfw][dependency_rfw]
+    * [flutter_eval][dependency_flutter_eval]
 
 ## Troubleshooting
 
@@ -31,6 +32,7 @@
 [badge_flutter]: https://img.shields.io/badge/flutter-v3.19.5-blue?logo=flutter
 [link_flutter_release]: https://docs.flutter.dev/development/tools/sdk/releases
 [dependency_rfw]: https://pub.dev/packages/rfw
+[dependency_flutter_eval]: https://pub.dev/packages/flutter_eval
 [useful_android_studio]: https://developer.android.com/studio
 [useful_virtual_device]: https://developer.android.com/studio/run/managing-avds.html
 [useful_developer_options]: https://developer.android.com/studio/debug/dev-options.html#enable
