@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_eval/flutter_eval.dart';
 
+const kLabel = 'Constant';
+
 class FlutterEvalPage extends StatefulWidget {
   const FlutterEvalPage({super.key});
 
@@ -29,8 +31,20 @@ class _FlutterEvalPageState extends State<FlutterEvalPage> {
                 @override
                 Widget build(BuildContext context) {
                   return Center(
-                    child: Text(
-                      'Validate',
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text('Validate $kLabel'),
+                        const SizedBox(height: 16.0),
+                        ElevatedButton(
+                          onPressed: () async {
+                            print('Start async action');
+                            await Future.delayed(const Duration(seconds: 5));
+                            print('End async action');
+                          },
+                          child: const Text('Async action'),
+                        ),
+                      ], 
                     ),
                   );
                 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:runtime_parser/pages/flutter_eval_page.dart';
-import 'package:runtime_parser/pages/rfw_page.dart';
+import 'package:runtime_parser/pages/_pages.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
