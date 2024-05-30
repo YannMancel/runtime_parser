@@ -22,11 +22,12 @@ class _FlutterEvalPageState extends State<FlutterEvalPage> {
   }
 
   void _updateLabel() {
+    const kWidgetName = 'Body';
     const kRemoteWidgets = '''
               import 'package:flutter/material.dart';
 
-              class Body extends StatelessWidget {
-                const Body({Key? key}) : super(key: key);
+              class $kWidgetName extends StatelessWidget {
+                const $kWidgetName({Key? key}) : super(key: key);
 
                 @override
                 Widget build(BuildContext context) {
@@ -71,7 +72,7 @@ class _FlutterEvalPageState extends State<FlutterEvalPage> {
           // To use a constructor, use "ClassName.constructorName" syntax. In
           // this case we are calling a default constructor so the constructor
           // name is blank.
-          function: 'Body.',
+          function: '$kWidgetName.',
           // Specify the arguments to pass to the entrypoint. Generally these
           // should be dart_eval [$Value] objects, but when invoking a static or
           // top-level function or constructor, [int]s, [double]s, and [bool]s

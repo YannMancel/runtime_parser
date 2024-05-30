@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:runtime_parser/pages/_pages.dart';
+import 'package:runtime_parser/src/_src.dart';
 
 void main() => runApp(const MyApp());
 
@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // home: const RFWPage(),
       home: const HomePage(),
     );
   }

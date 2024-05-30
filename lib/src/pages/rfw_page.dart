@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rfw/formats.dart';
 import 'package:rfw/rfw.dart';
+import 'package:runtime_parser/src/_src.dart';
 
 class RFWPage extends StatefulWidget {
   const RFWPage({super.key});
@@ -31,7 +32,7 @@ class _RFWPageState extends State<RFWPage> {
     widget root = Container(
       child: Center(
         child: Text(
-          text: ["Hello, ", data.greet.name, "!"], textDirection: "ltr"),
+          text: ["Hello, it is ", data.book.startAsyncAction, "!"], textDirection: "ltr"),
       ),
     );
   ''');
@@ -45,9 +46,15 @@ class _RFWPageState extends State<RFWPage> {
       // Remote widget library:
       ..update(kMainName, remoteWidgets);
 
+    const kBook = Book(
+      pages: <String>['first page', 'second page'],
+    );
     final data = DynamicContent()
       // Configuration data:
-      ..update('greet', <String, Object>{'name': 'World (After on tap)'});
+      ..update('book', <String, Object>{
+        'firstPage': kBook.firstPage,
+        'startAsyncAction': kBook.startAsyncAction(),
+      });
 
     if (mounted) {
       setState(() {
